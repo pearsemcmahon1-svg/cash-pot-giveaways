@@ -1,6 +1,6 @@
 export default function Home () {
   return (
-    <main
+    <main>
       style={{
         background: "#0a0a0a",
         color: "white",
