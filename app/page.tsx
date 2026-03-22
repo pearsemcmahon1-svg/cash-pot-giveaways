@@ -41,33 +41,32 @@ export default function Home() {
       </section>
 
       <section style={{
-        maxWidth: "600px",
-        margin: "auto",
-        textAlign: "center"
-      }}>
-        <p>Tickets Sold: 120 / 500</p>
+  maxWidth: "600px",
+  margin: "60px auto",
+  textAlign: "center"
+}}>
+  <p style={{
+    marginBottom: "10px",
+    fontSize: "18px",
+    color: "#ccc"
+  }}>
+    🎟 120 tickets sold out of 500
+  </p>
 
-        <div style={{
-          background: "#222",
-          height: "20px",
-          borderRadius: "10px"
-        }}>
-          <div style={{
-            width: "24%",
-            background: "#d4af37",
-            height: "100%",
-            borderRadius: "10px"
-          }} />
-        </div>
-      </section>
-
-      <section style={{
-        textAlign: "center",
-        marginTop: "80px"
-      }}>
-        <h2 style={{ color: "#d4af37" }}>Draw Ends In</h2>
-        <p style={{ fontSize: "30px" }}>03:12:45</p>
-      </section>
+  <div style={{
+    background: "#222",
+    height: "25px",
+    borderRadius: "20px",
+    overflow: "hidden"
+  }}>
+    <div style={{
+      width: "24%",
+      background: "linear-gradient(90deg, #d4af37, #f5d76e)",
+      height: "100%",
+      transition: "width 0.5s ease"
+    }} />
+  </div>
+</section>
 
     </main>
   );
