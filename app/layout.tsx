@@ -1,8 +1,9 @@
 export default function RootLayout({
-  children
+  children,
+}: {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
+  );
 }
