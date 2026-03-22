@@ -1,7 +1,8 @@
 export default function Home () {
   return (
-    <main style={{
-      background: "#0a0a0a,
+    <main 
+      style={{
+      background: "#0a0a0a",
       color: "white",
       minHeight: "100vh",
       display: "flex",
@@ -9,11 +10,12 @@ export default function Home () {
       justifycontent:"center",
       flexDirection: "column",
       fontFamily: "sans-serif"
-      }}>
-<h1 style={{ fontsize: "48px", marginBottom
+      }}
+      >
+<h1 style={{ fontsize: "48px", marginBottom: "10px" }}>
  💰 Cash Pot Giveaways
   </main>h1>
-    <p style={{ fontSize: "20px" , opacity:
+    <p style={{ fontSize: "20px" , opacity: 0.7 }}>
       your raffle platform is now live
       </p>
     </main> 
