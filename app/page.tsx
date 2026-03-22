@@ -1,86 +1,92 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 
 export default function Home() {
-  const totalTickets = 500;
 
-  const [sold, setSold] = useState(120);
-
-  // Fake live updates (for now)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSold((prev) => {
-        if (prev >= totalTickets) return prev;
-        return prev + Math.floor(Math.random() * 3); // +0 to +2 tickets
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const percentage = (sold / totalTickets) * 100;
-  const remaining = totalTickets - sold;
+  const competitions = [
+    {
+      id: 1,
+      title: "💰 £500 Cash Prize",
+      price: 2,
+      total: 500,
+      sold: 120
+    },
+    {
+      id: 2,
+      title: "💰 £1000 Cash Prize",
+      price: 5,
+      total: 400,
+      sold: 250
+    }
+  ];
 
   return (
     <main style={{
       background: "#0a0a0a",
       color: "white",
       minHeight: "100vh",
-      fontFamily: "Arial, sans-serif"
+      padding: "40px"
     }}>
 
-      {/* HERO */}
-      <section style={{ textAlign: "center", padding: "100px 20px" }}>
-        <h1 style={{
-          fontSize: "60px",
-          color: "#d4af37",
-          marginBottom: "20px"
-        }}>
-          💰 WIN £500 CASH
-        </h1>
-
-        <button style={{
-          marginTop: "30px",
-          padding: "15px 40px",
-          background: "#d4af37",
-          color: "black",
-          border: "none",
-          fontSize: "18px",
-          cursor: "pointer",
-          borderRadius: "5px"
-        }}>
-          ENTER NOW
-        </button>
-      </section>
-
-      {/* PROGRESS */}
-      <section style={{
-        maxWidth: "600px",
-        margin: "auto",
-        textAlign: "center"
+      <h1 style={{
+        textAlign: "center",
+        color: "#d4af37",
+        marginBottom: "40px"
       }}>
-        <p style={{ fontSize: "18px", marginBottom: "10px", color: "#ccc" }}>
-          🎟 {sold} tickets sold out of {totalTickets}
-        </p>
+        Cash Pot Giveaways
+      </h1>
 
-        <p style={{ color: "#ff4d4d", marginBottom: "10px" }}>
-          ⚡ Only {remaining} tickets left!
-        </p>
+      {competitions.map((comp) => {
+        const percentage = (comp.sold / comp.total) * 100;
+        const remaining = comp.total - comp.sold;
 
-        <div style={{
-          background: "#222",
-          height: "25px",
-          borderRadius: "20px",
-          overflow: "hidden"
-        }}>
-          <div style={{
-            width: percentage + "%",
-            background: "linear-gradient(90deg, #d4af37, #f5d76e)",
-            height: "100%",
-            transition: "width 0.5s ease"
-          }} />
-        </div>
-      </section>
+        return (
+          <div key={comp.id} style={{
+            border: "1px solid #333",
+            padding: "20px",
+            marginBottom: "30px",
+            borderRadius: "10px"
+          }}>
+
+            <h2 style={{ color: "#d4af37" }}>{comp.title}</h2>
+
+            <p>£{comp.price} per ticket</p>
+
+            <p>
+              🎟 {comp.sold} sold out of {comp.total}
+            </p>
+
+            <p style={{ color: "#ff4d4d" }}>
+              ⚡ {remaining} tickets left
+            </p>
+
+            <div style={{
+              background: "#222",
+              height: "20px",
+              borderRadius: "10px"
+            }}>
+              <div style={{
+                width: percentage + "%",
+                background: "#d4af37",
+                height: "100%",
+                borderRadius: "10px"
+              }} />
+            </div>
+
+            <button style={{
+              marginTop: "15px",
+              padding: "10px 20px",
+              background: "#d4af37",
+              border: "none",
+              cursor: "pointer"
+            }}>
+              Enter Now
+            </button>
+
+          </div>
+        );
+      })}
 
     </main>
   );
