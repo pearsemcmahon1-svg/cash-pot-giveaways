@@ -1,51 +1,4 @@
-export default function Home() {
-  return (
-    <main style={{
-      background: "#0a0a0a",
-      color: "white",
-      minHeight: "100vh",
-      fontFamily: "Arial, sans-serif"
-    }}>
-      
-      <section style={{
-        textAlign: "center",
-        padding: "100px 20px"
-      }}>
-        <h1 style={{
-          fontSize: "60px",
-          color: "#d4af37",
-          marginBottom: "20px"
-        }}>
-          💰 WIN £500 CASH
-        </h1>
-
-        <p style={{
-          fontSize: "20px",
-          color: "#ccc"
-        }}>
-          Enter for your chance to win big
-        </p>
-
-        <button style={{
-          marginTop: "30px",
-          padding: "15px 40px",
-          background: "#d4af37",
-          color: "black",
-          border: "none",
-          fontSize: "18px",
-          cursor: "pointer",
-          borderRadius: "5px"
-        }}>
-          ENTER NOW
-        </button>
-      </section>
-
-      <section style={{
-  maxWidth: "600px",
-  margin: "60px auto",
-  textAlign: "center"
-}}>
-  "use client";
+"use client";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -132,3 +85,4 @@ export default function Home() {
     </main>
   );
 }
+
